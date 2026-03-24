@@ -13,8 +13,7 @@ namespace Mock.SwagLabs.Checkouts;
 [PageEntityMeta(
     Route = "/checkout-step-one.html",
     Registry = typeof(CheckoutPageRegistry),
-    Name = "CheckoutPage",
-    DomId = "some"
+    Name = "Checkout"
 )]
 public class CheckoutPage(IDriver driver, IEventBus eventBus) : PageEntity(driver, eventBus)
 {
