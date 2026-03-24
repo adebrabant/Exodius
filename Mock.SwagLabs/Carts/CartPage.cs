@@ -13,14 +13,8 @@ namespace Mock.SwagLabs.Carts;
     Name = "Cart",
     DomId = "shopping-cart-link"
 )]
-public class CartPage : PageEntity
+public class CartPage(IDriver driver, IEventBus eventBus) : PageEntity(driver, eventBus)
 {
-    public CartPage(IDriver driver, IEventBus eventBus) 
-        : base(driver, eventBus)
-    {
-
-    }
-
     public async Task ProcessAsync()
     {
         var cartFooterComponent = GetComponent<CartFooterComponent>();

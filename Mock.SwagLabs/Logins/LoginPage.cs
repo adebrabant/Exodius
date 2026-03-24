@@ -12,14 +12,8 @@ namespace Mock.SwagLabs.Logins;
     Route = "/",
     Registry = typeof(LoginPageRegistry)
 )]
-public class LoginPage : PageEntity
+public class LoginPage(IDriver driver, IEventBus eventBus) : PageEntity(driver, eventBus)
 {
-    public LoginPage(IDriver driver, IEventBus eventBus)
-        : base(driver, eventBus)
-    {
-
-    }
-
     private TextInputElement UserNameTextbox => Driver.FindElement<ById,TextInputElement>("user-name");
     private TextInputElement PasswordTextbox => Driver.FindElement<ById, TextInputElement>("password");
     private ButtonElement LoginButton => Driver.FindElement<ById, ButtonElement>("login-button");
