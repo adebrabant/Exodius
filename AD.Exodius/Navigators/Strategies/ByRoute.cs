@@ -9,7 +9,7 @@ namespace AD.Exodius.Navigators.Strategies;
 /// </summary>
 public class ByRoute : INavigationStrategy
 {
-    public async Task Navigate<TPage>(IDriver driver, TPage page) where TPage : IPageEntity
+    public async Task NavigateAsync<TPage>(IDriver driver, TPage page) where TPage : IPageEntity
     {
         var isEntityMetaPresent = page.TryGetPageEntityMeta(out var entityMeta);
         var pageEntityMetaRoute = page.TryGetRoute(out var route) ? route : isEntityMetaPresent ? entityMeta?.Route : null;

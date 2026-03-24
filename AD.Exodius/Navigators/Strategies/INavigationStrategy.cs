@@ -16,5 +16,5 @@ public interface INavigationStrategy
     /// <param name="driver">The driver used to perform the navigation.</param>
     /// <param name="page">The page to navigate to.</param>
     /// <returns>A task representing the asynchronous navigation operation.</returns>
-    public Task Navigate<TPage>(IDriver driver, TPage page) where TPage : IPageEntity;
+    public Task NavigateAsync<TPage>(IDriver driver, TPage page) where TPage : IPageEntity;
 }

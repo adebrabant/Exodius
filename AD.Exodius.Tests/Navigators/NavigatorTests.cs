@@ -60,9 +60,9 @@ public class NavigatorTests
 
             _mockNavigationStrategyFactory.Create<StubNavigationStrategy>();
 
-            stubNavigation.Navigate(_mockDriver, stubPage);
+            stubNavigation.NavigateAsync(_mockDriver, stubPage);
 
-            stubPage?.WaitUntilReady();
+            stubPage?.WaitUntilReadyAsync();
         });
     }
 

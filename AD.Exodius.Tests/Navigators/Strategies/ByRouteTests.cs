@@ -28,7 +28,7 @@ public class ByRouteTests
 
         _mockDriver.BuildUrlWithRoute(expectedRoute).Returns(expectedUrl);
 
-        await _sut.Navigate(_mockDriver, page);
+        await _sut.NavigateAsync(_mockDriver, page);
 
         await _mockDriver.Received(1).GoToUrlAsync(expectedUrl);
     }
@@ -43,7 +43,7 @@ public class ByRouteTests
 
         _mockDriver.BuildUrlWithRoute(expectedRoute + queryString).Returns(expectedUrl);
 
-        await _sut.Navigate(_mockDriver, page);
+        await _sut.NavigateAsync(_mockDriver, page);
 
         await _mockDriver.Received(1).GoToUrlAsync(expectedUrl);
     }

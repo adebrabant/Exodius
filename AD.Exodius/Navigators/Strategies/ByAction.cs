@@ -10,7 +10,7 @@ namespace AD.Exodius.Navigators.Strategies;
 /// </summary>
 public class ByAction : INavigationStrategy
 {
-    public async Task Navigate<TPage>(IDriver driver, TPage page) where TPage : IPageEntity
+    public async Task NavigateAsync<TPage>(IDriver driver, TPage page) where TPage : IPageEntity
     {
         var pageEntityLocator = page.TryGetName(out var name) 
             ? name : page.TryGetPageEntityMeta(out var meta) ? meta.DomId : null;

@@ -10,5 +10,5 @@ public interface IWaitComponent : IEntityComponent
     /// Waits until the section or page is fully loaded, ensuring that all required elements and content are visible and ready for interaction.
     /// </summary>
     /// <returns>A task representing the asynchronous operation.</returns>
-    public Task WaitUntilFullyLoaded();
+    public Task WaitUntilFullyLoadedAsync();
 }
