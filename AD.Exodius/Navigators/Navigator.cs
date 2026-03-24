@@ -43,9 +43,9 @@ public class Navigator : INavigator
         pageEntity.InitializeLazyComponents();
 
         var navigation = NavigationStrategyFactory.Create<TNavigation>();
-        await navigation.Navigate(Driver, pageEntity);
+        await navigation.NavigateAsync(Driver, pageEntity);
 
-        await pageEntity.WaitUntilReady();
+        await pageEntity.WaitUntilReadyAsync();
 
         return pageEntity;
     }

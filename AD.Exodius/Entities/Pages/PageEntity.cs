@@ -14,14 +14,14 @@ public class PageEntity : Entity, IPageEntity
 
     private async Task OnReadyCheck(PageReadyCheckEvent _)
     {
-        await WaitUntilReady();
+        await WaitUntilReadyAsync();
     }
 
-    public virtual async Task WaitUntilReady()
+    public virtual async Task WaitUntilReadyAsync()
     {
         var waitSections = GetComponents<IWaitComponent>();
 
         await Task.WhenAll(waitSections
-            .Select(section => section.WaitUntilFullyLoaded()));
+            .Select(section => section.WaitUntilFullyLoadedAsync()));
     }
 }

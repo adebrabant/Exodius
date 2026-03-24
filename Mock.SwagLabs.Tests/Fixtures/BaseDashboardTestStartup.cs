@@ -5,7 +5,7 @@ using AD.Exodius.Navigators;
 using AD.Exodius.Navigators.Factories;
 using Mock.SwagLabs.Configurations;
 using Mock.SwagLabs.Configurations.Models;
-using Mock.SwagLabs.Tests.Services;
+using Mock.SwagLabs.Tests.Reports;
 using NUnit.Framework;
 
 [assembly: LevelOfParallelism(4)]

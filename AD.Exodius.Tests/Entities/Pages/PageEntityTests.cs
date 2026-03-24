@@ -26,7 +26,7 @@ public class PageEntityTests
 
         }
 
-        public override async Task WaitUntilReady()
+        public override async Task WaitUntilReadyAsync()
         {
             WaitCalled = true;
             await Task.CompletedTask; 

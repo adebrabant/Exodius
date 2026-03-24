@@ -17,5 +17,5 @@ public interface IPageEntity : IEntity
     /// This ensures the entity is fully initialized before use in test workflows or UI automation logic.
     /// </summary>
     /// <returns>A task representing the asynchronous wait operation.</returns>
-    Task WaitUntilReady();
+    Task WaitUntilReadyAsync();
 }

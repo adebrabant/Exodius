@@ -1,8 +1,8 @@
 ﻿using AD.Exodius.Helpers;
 using AD.Exodius.Navigators.Strategies;
-using Mock.SwagLabs.Components;
-using Mock.SwagLabs.Components.Enums;
-using Mock.SwagLabs.Pages;
+using Mock.SwagLabs.Products.Enums;
+using Mock.SwagLabs.Products;
+using Mock.SwagLabs.Products.Components;
 using Mock.SwagLabs.Tests.Assertions;
 using Mock.SwagLabs.Tests.Fixtures;
 using NUnit.Framework;
@@ -15,7 +15,7 @@ public class ProductSortFilterTests : BypassLoginTestStartup
 {
     [TestCase(ProductFilter.AZ, SortOrder.Ascending)]
     [TestCase(ProductFilter.ZA, SortOrder.Descending)]
-    public async Task ProductSortFilter_ShouldSortItemNames_WhenFilterIsApplied_AccordingToSortOrder(
+    public async Task ProductSortFilter_ShouldSortItemNames_WhenFilterIsApplied(
         ProductFilter productFilter,
         SortOrder expectedSortOrder)
     {
@@ -28,7 +28,7 @@ public class ProductSortFilterTests : BypassLoginTestStartup
 
         var allItemNames = await productsPage
             .GetComponent<IInventoryComponent>()
-            .Then(component => component.GetAllItemNamesInOrder());
+            .Then(component => component.GetAllItemNamesInOrderAsync());
 
         allItemNames
             .Should()
@@ -37,7 +37,7 @@ public class ProductSortFilterTests : BypassLoginTestStartup
 
     [TestCase(ProductFilter.LoHi, SortOrder.Ascending)]
     [TestCase(ProductFilter.HiLo, SortOrder.Descending)]
-    public async Task ProductSortFilter_ShouldSortItemPrices_WhenFilterIsApplied_AccordingToSortOrder(
+    public async Task ProductSortFilter_ShouldSortItemPrices_WhenFilterIsApplied(
         ProductFilter productFilter,
         SortOrder expectedSortOrder)
     {
@@ -50,7 +50,7 @@ public class ProductSortFilterTests : BypassLoginTestStartup
 
         var allItemPrices = await productsPage
             .GetComponent<IInventoryComponent>()
-            .Then(component => component.GetAllPricesInOrder<decimal>());
+            .Then(component => component.GetAllPricesInOrderAsync<decimal>());
 
         allItemPrices
             .Should()
