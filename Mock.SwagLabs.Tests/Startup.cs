@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Mock.SwagLabs.StartupServices;
+using Mock.SwagLabs.Registrations;
 
 namespace Mock.SwagLabs.Tests;
 

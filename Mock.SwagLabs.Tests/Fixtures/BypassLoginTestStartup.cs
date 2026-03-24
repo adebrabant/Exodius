@@ -1,8 +1,8 @@
 ﻿using AD.Exodius.Helpers;
 using AD.Exodius.Navigators.Strategies;
 using Mock.SwagLabs.Configurations.Models;
-using Mock.SwagLabs.Pages;
-using Mock.SwagLabs.Pages.Mappers;
+using Mock.SwagLabs.Logins;
+using Mock.SwagLabs.Logins.Mappers;
 
 namespace Mock.SwagLabs.Tests.Fixtures;
 
@@ -18,6 +18,6 @@ public class BypassLoginTestStartup : BaseDashboardTestStartup
 
         await Navigator
             .GoToAsync<LoginPage, ByRoute>()
-            .Then(page => page.Login(login));
+            .Then(page => page.SubmitLoginAsync(login));
     }
 }
