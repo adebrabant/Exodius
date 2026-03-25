@@ -28,7 +28,7 @@ public class CheckoutFlowTests : BypassLoginTestStartup
             .Then(page => page.ProcessAsync());
 
         var orderConfirmation = await Navigator
-            .GoToAsync<CheckoutPage, ByRoute>()
+            .GoToAsync<CheckoutPage, ByNoOp>()
             .Then(page => page.FinishOrderAsync(checkoutForm));
 
         orderConfirmation.Header.Should().Be("Thank you for your order!");
